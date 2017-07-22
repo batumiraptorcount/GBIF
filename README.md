@@ -1,7 +1,6 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
+This repository contains all scripts to normalize (and analyze) the count data of BRC
 ### What is this repository for? ###
 
 * Quick summary
