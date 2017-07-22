@@ -1,7 +1,7 @@
 # README #
 
-This repository contains all scripts to normalize (and analyze) the count data of BRC
 ### What is this repository for? ###
+This repository contains all scripts to normalize (and analyze) the count data of BRC
 
 * Quick summary
 * Version
