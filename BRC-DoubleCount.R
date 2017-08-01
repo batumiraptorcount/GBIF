@@ -7,7 +7,15 @@
 ############################ Instructions ################################
 # runs only under BRC formatted data
 # see BRC-oldDataConverter.R for details
-# todo's: order tablespecs by taxonomy ID
+
+# todo's: 
+# order tablespecs by taxonomy ID, 
+# change BootedEL to BootedE checked by morph, 
+# adjust abbreviations
+# adjust headertitles
+# adjust SC/DC col to values in counttype
+# adjust health/shotdown cols to values in migtype
+# remove German - change to English
 
 rm(list=ls())
 
@@ -20,12 +28,12 @@ library(rpanel)
 ### directories #####
 # modify the path
 workdir<-"/Users/jasper 1/Documents/Rplayground/data/in"
-outputdir<-"/Users/jasper 1/Documents/Rplayground/data/out"
+outputdir<-"data/out"
 
 ### load data #####
 setwd(workdir)
 # modify the file name, make sure the csv is encoded in UTF-8!!
-full_data<-read.csv("2015-RAW-BRC_tab.csv", header=TRUE, encoding="UTF-8")
+full_data<-read.csv("2008-test.csv", header=TRUE, encoding="UTF-8")
 
 ### data preparation #####
 full_data$species<-as.character(full_data$species)
@@ -205,8 +213,8 @@ for (i in 1:a1){
 				(species1[i]=="Mar" & species2[j]=="Harrier-SPEC")|
 				(species1[i]=="Hen" & species2[j]=="Harrier-SPEC")|
 				(species1[i]=="Pal" & species2[j]=="Harrier-SPEC")|
-				(species1[i]=="HB" & species2[j]=="Buzzard")|
-				(species1[i]=="SB" & species2[j]=="Buzzard")|
+				(species1[i]=="HB" & species2[j]=="Buzzard-SPEC")|
+				(species1[i]=="SB" & species2[j]=="Buzzard-SPEC")|
 				(species1[i]=="SB" & species2[j]=="MediumRaptor") |
 				(species1[i]=="HB" & species2[j]=="MediumRaptor")|
 				(species1[i]=="BlackKite" & species2[j]=="MediumRaptor")|
@@ -227,7 +235,7 @@ for (i in 1:a1){
 				(species1[i]=="MonPalHen" & species2[j]=="Harrier-SPEC")|
 				(species1[i]=="MonPalHen" & species2[j]=="MediumRaptor")|
 				(species1[i]=="Harrier-SPEC" & species2[j]=="MediumRaptor")|
-				(species1[i]=="Buzzard" & species2[j]=="MediumRaptor")|
+				(species1[i]=="Buzzard-SPEC" & species2[j]=="MediumRaptor")|
 				
 				(species1[i]=="CommonKestrel" & species2[j]=="Kestrel-SPEC")|
 				(species1[i]=="LesserKestrel" & species2[j]=="Kestrel-SPEC")|
@@ -320,8 +328,8 @@ for (i in 1:a1){
 				(species1[i]=="Harrier-SPEC" & species2[j]=="Pal")|
 				(species1[i]=="Harrier-SPEC" & species2[j]=="Hen")|
 				(species1[i]=="Harrier-SPEC" & species2[j]=="Mar")|
-				(species1[i]=="Buzzard" & species2[j]=="HB")|
-				(species1[i]=="Buzzard" & species2[j]=="SB")|
+				(species1[i]=="Buzzard-SPEC" & species2[j]=="HB")|
+				(species1[i]=="Buzzard-SPEC" & species2[j]=="SB")|
 				(species1[i]=="MediumRaptor" & species2[j]=="SB") |
 				(species1[i]=="MediumRaptor" & species2[j]=="HB") |
 				(species1[i]=="MediumRaptor" & species2[j]=="BlackKite")|
@@ -341,7 +349,7 @@ for (i in 1:a1){
 				(species1[i]=="Harrier-SPEC" & species2[j]=="MonPalHen")|								
 				(species1[i]=="MediumRaptor" & species2[j]=="MonPalHen")|
 				(species1[i]=="MediumRaptor" & species2[j]=="Harrier-SPEC")|
-				(species1[i]=="MediumRaptor" & species2[j]=="Buzzard")|
+				(species1[i]=="MediumRaptor" & species2[j]=="Buzzard-SPEC")|
 				
 				(species1[i]=="Kestrel-SPEC" & species2[j]=="CommonKestrel")|
 				(species1[i]=="Kestrel-SPEC" & species2[j]=="LesserKestrel")|
