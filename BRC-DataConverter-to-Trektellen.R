@@ -87,7 +87,7 @@ data$speciesname[
 data$speciesid[data$speciesname == "BlackKite"]<-as.numeric("88")
 
 data$speciesname[data$speciesname == "RK"]<-"RedKite"
-data$speciesid[data$speciesname == "RedKite"]<-as.numeric("7000") # code missing ####################
+data$speciesid[data$speciesname == "RedKite"]<-as.numeric("89") # code missing ####################
 
 
 # Eagles ########################################
@@ -166,6 +166,7 @@ data$speciesid[data$speciesname == "DalmatianP"]<-as.numeric("507")
 data$speciesname[data$speciesname == "Rol"]<-"Roller"
 data$speciesid[data$speciesname == "Roller"]<-as.numeric("255")
 
+data$speciesname[data$speciesname == "Wood Pigeon"]<-"WoodP"
 data$speciesid[data$speciesname == "WoodP"]<-as.numeric("233")
 
 data$speciesname[data$speciesname == "TurtleD"]<-"TurtleDove"
@@ -202,8 +203,8 @@ data$speciesname[
 | data$speciesname == "Buz" 
 | data$speciesname == "Buzspec"
 | data$speciesname == "B"
-| data$speciesname == "Buzzard" 
-| data$speciesname == "SBHB" 
+| data$speciesname == "Buzzard"
+| data$speciesname == "SBHB"
 | data$speciesname == "Pernis_SPEC"]<-"Buzzard-SPEC"
 data$speciesid[data$speciesname == "Buzzard-SPEC"]<-as.numeric("586")
 
@@ -245,8 +246,11 @@ data$speciesid[data$speciesname == "StepBuz"]<-as.numeric("102")
 data$remark[data$speciesname == "StepBuz" & (data$year == "2010" | data$year == "2011")]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "StepBuz" & (data$year == "2010" | data$year == "2011")])
 data$count[data$speciesname == "StepBuz" & (data$year == "2010" | data$year == "2011")]<-0
 
-data$speciesid[data$speciesname == "SB_Juv"]<-as.numeric("5000")
-data$speciesid[data$speciesname == "SB_Ad"]<-as.numeric("1156")
+data$speciesname[data$speciesname == "SB_Juv"]<-"SB_JUV"
+data$speciesid[data$speciesname == "SB_JUV"]<-as.numeric("-95")
+
+data$speciesname[data$speciesname == "SB_Ad"]<-"SB_AD"
+data$speciesid[data$speciesname == "SB_AD"]<-as.numeric("-94")
 
 data$speciesname[data$speciesname == "RLB"]<-"RoughLB"
 data$speciesid[data$speciesname == "RoughLB"]<-as.numeric("104")
@@ -276,7 +280,8 @@ data$speciesid[data$speciesname == "CommonKes"]<-as.numeric("110")
 
 data$speciesname[
   data$speciesname == "LK" 
-| data$speciesname == "LesserKestrel" 
+| data$speciesname == "LesserKestrel"
+| data$speciesname == "Lesser Kestrel"
 | data$speciesname == "LKes"]<-"LesserKes"
 data$speciesid[data$speciesname == "LesserKes"]<-as.numeric("593")
 
@@ -398,10 +403,11 @@ data$speciesname[data$speciesname == "MUID" ]<-"MediumRaptor"
 data$speciesid[data$speciesname == "MediumRaptor"]<-as.numeric("1103")
 
 data$speciesname[
-  data$speciesname == "UID" 
-| data$speciesname == "NIS"
+  data$speciesname == "UID"
 | data$speciesname == "Raptor_SPEC"
-| data$speciesname == "SUID"]<-"Raptor-SPEC"
+| data$speciesname == "SUID"]<-"Raptor-SPEC" 
+# 44757 UIDS in 19 records until 2010, 42000 entry looks like SteppeBuz and BK in 2009
+# 14 SUIDS Birds only, hence neglected and add to raptor-spec
 data$speciesid[data$speciesname == "Raptor-SPEC"]<-as.numeric("997")
 
 
