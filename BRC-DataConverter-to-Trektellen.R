@@ -28,8 +28,8 @@ data2011<-read.csv("2011-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",
 data2012<-read.csv("2012-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",")
 data2013<-read.csv("2013-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",")
 data2014<-read.csv("2014-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",")
-#data2015<-read.csv("2015-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",") # have been recorded with Trektellen APP
-#data2016<-read.csv("2016-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",") # have been recorded with Trektellen APP
+data2015<-read.csv("2015-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",") # have been recorded with Trektellen APP
+data2016<-read.csv("2016-BRC-CLEANED.csv", header=TRUE, encoding="UTF-8", sep=",") # have been recorded with Trektellen APP
 
 
 
@@ -39,7 +39,7 @@ data2009$Age_det<-NULL
 data2010$Low<-NULL
 data2012$BE_flock<-NULL
 
-data<-data.frame(rbind(data2008, data2009, data2010, data2011, data2012, data2013, data2014))#, data2015, data2016
+data<-data.frame(rbind(data2008, data2009, data2010, data2011, data2012, data2013, data2014, data2015, data2016))
 
 #delete NA
 data[is.na(data)]<-""
@@ -47,6 +47,10 @@ data[is.na(data)]<-""
 ### attach date formats ###
 data$yday<-yday(data$date)
 data$year<-year(data$date)
+
+data$count<-as.numeric(as.character(data$count))
+data$speciesid<-as.numeric(as.character(data$speciesid))
+data$speciesname<-as.character(data$speciesname)
 
 
 #### find & replace general entries ####
@@ -56,14 +60,22 @@ data$remark<-gsub("'", " ", data$remark, fixed = TRUE)
 data$location[data$location == ">E3"]<-"E4"
 data$location[data$location == "w1"]<-"W1"
 
-#### adjust speciesnames to same abbreviations
-### playground
-#data[data$sex == "non-juv", ]
-#####
+#### adjust age / sex to same abbreviations
+data$age<-tolower(data$age)
+data$age[data$age =="j"]<-"juv"
+data$age[data$age =="i"]<-"imm"
+data$age[data$age =="a"]<-"ad"
+data$sex<-tolower(data$sex)
+data$age<-gsub(" ", "", data$age, fixed = TRUE)
+data$age<-gsub("-", "", data$age, fixed = TRUE)
+data$sex<-gsub(" ", "", data$sex, fixed = TRUE)
 
-data$count<-as.numeric(as.character(data$count))
-data$speciesid<-as.numeric(as.character(data$speciesid))
-data$speciesname<-as.character(data$speciesname)
+data$sex[data$sex == "nonjuv"]<-"" #concerns 3 records of Mar in 2014
+data$sex[data$age == "fc" & data$sex == ""]<-"fc" #concerns 2 records of in 2010
+data$age[data$age == "fc" & data$sex == "fc"]<-"" #concerns 2 records of in 2010
+data$age[data$age == "m"]<-"nonjuv" #concerns 3 record in 2013 were non-juv males
+data$age[data$age == "adult"]<-"ad"
+
 
 # Kites ########################################
 data$speciesname[
@@ -84,10 +96,11 @@ data$speciesid[data$speciesname == "BK_NONJUV"]<-as.numeric("-93")
 data$speciesname[
   data$speciesname == "BK"
 | data$speciesname == "BlaKite"]<-"BlackKite"
+
 data$speciesid[data$speciesname == "BlackKite"]<-as.numeric("88")
 
 data$speciesname[data$speciesname == "RK"]<-"RedKite"
-data$speciesid[data$speciesname == "RedKite"]<-as.numeric("89") # code missing ####################
+data$speciesid[data$speciesname == "RedKite"]<-as.numeric("89")
 
 
 # Eagles ########################################
@@ -97,6 +110,13 @@ data$speciesname[
   data$speciesname == "BED"
 | data$speciesname == "BEL"
 | data$speciesname == "BE"]<-"BootedE"
+
+data$age[(
+  data$speciesname == "BootedE" 
+& (data$age == "imm" 
+| data$age == "ad"))]<-"nonjuv"
+
+
 data$speciesid[data$speciesname == "BootedE"]<-as.numeric("592")
 
 data$speciesname[data$speciesname == "GE"]<-"GoldenE"
@@ -115,6 +135,7 @@ data$speciesname[
 | data$speciesname == "LEspec" 
 | data$speciesname == "LAquila-SPEC" 
 | data$speciesname == "LUID"
+| data$speciesname == "Large EAGLE"
 | data$speciesname == "LesGreStep"]<-"LargeEAGLE"
 data$speciesid[data$speciesname == "LargeEAGLE"]<-as.numeric("1151")
 
@@ -169,8 +190,8 @@ data$speciesid[data$speciesname == "Roller"]<-as.numeric("255")
 data$speciesname[data$speciesname == "Wood Pigeon"]<-"WoodP"
 data$speciesid[data$speciesname == "WoodP"]<-as.numeric("233")
 
-data$speciesname[data$speciesname == "TurtleD"]<-"TurtleDove"
-data$speciesid[data$speciesname == "TurtleDove"]<-as.numeric("235")
+data$speciesname[data$speciesname == "TurtleDove"]<-"TurtleD"
+data$speciesid[data$speciesname == "TurtleD"]<-as.numeric("235")
 
 data$speciesid[data$speciesname == "StockD"]<-as.numeric("232")
 
@@ -204,7 +225,9 @@ data$speciesname[
 | data$speciesname == "Buzspec"
 | data$speciesname == "B"
 | data$speciesname == "Buzzard"
+| data$speciesname == "Buzzard sp"
 | data$speciesname == "SBHB"
+| data$speciesname == "Buz/HonBuz"
 | data$speciesname == "Pernis_SPEC"]<-"Buzzard-SPEC"
 data$speciesid[data$speciesname == "Buzzard-SPEC"]<-as.numeric("586")
 
@@ -234,16 +257,15 @@ data$speciesid[data$speciesname == "HB_JUV"]<-as.numeric("-91")
 
 data$speciesname[data$speciesname == "LLB"]<-"LongLB"
 data$speciesid[data$speciesname == "LongLB"]<-as.numeric("103")
-# LongLB not monitored in 2010, 11, 12, 13, 14
-data$remark[data$speciesname == "LongLB" & (data$year >= "2010" & data$year <= "2014")]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "LongLB" & (data$year >= "2010" & data$year <= "2014")])
-data$count[data$speciesname == "LongLB" & (data$year >= "2010" & data$year <= "2014")]<-0
-
+# LongLB not monitored in >=2010
+data$remark[data$speciesname == "LongLB" & data$year >= 2010]<-paste("previously", data$count[data$speciesname == "LongLB" & data$year >= 2010], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "LongLB" & data$year >= 2010])
+data$count[data$speciesname == "LongLB" & data$year >= "2010"]<-0
 
 
 data$speciesname[data$speciesname == "SB"]<-"StepBuz"
 data$speciesid[data$speciesname == "StepBuz"]<-as.numeric("102")
 # StepBuz not monitored in 2010, 11
-data$remark[data$speciesname == "StepBuz" & (data$year == "2010" | data$year == "2011")]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "StepBuz" & (data$year == "2010" | data$year == "2011")])
+data$remark[data$speciesname == "StepBuz" & (data$year == 2010 | data$year == 2011)]<-paste("previously", data$count[data$speciesname == "StepBuz" & (data$year >= 2010 & data$year <= 2011)], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "StepBuz" & (data$year >= 2010 & data$year <= 2011)])
 data$count[data$speciesname == "StepBuz" & (data$year == "2010" | data$year == "2011")]<-0
 
 data$speciesname[data$speciesname == "SB_Juv"]<-"SB_JUV"
@@ -254,8 +276,6 @@ data$speciesid[data$speciesname == "SB_AD"]<-as.numeric("-94")
 
 data$speciesname[data$speciesname == "RLB"]<-"RoughLB"
 data$speciesid[data$speciesname == "RoughLB"]<-as.numeric("104")
-
-
 
 
 # Cranes ########################################
@@ -269,7 +289,6 @@ data$speciesid[data$speciesname == "EurasianCrane"]<-as.numeric("129")
 
 data$speciesname[data$speciesname == "Demoiselle crane"]<-"DemCrane"
 data$speciesid[data$speciesname == "DemCrane"]<-as.numeric("624")
-
 
 
 # Falcons ########################################
@@ -321,6 +340,7 @@ data$speciesname[
   data$speciesname == "PerSak" 
 | data$speciesname == "LargeFALCON" 
 | data$speciesname == "LargeFalcon" 
+| data$speciesname == "large FALCON" 
 | data$speciesname == "LFspec" 
 | data$speciesname == "PerSakLan"]<-"LargeFALCON"
 data$speciesid[data$speciesname == "LargeFALCON"]<-as.numeric("1150")
@@ -328,12 +348,42 @@ data$speciesid[data$speciesname == "LargeFALCON"]<-as.numeric("1150")
 data$speciesname[data$speciesname == "Falco-SPEC"]<-"Falcon-SPEC"
 data$speciesid[data$speciesname == "Falcon-SPEC"]<-as.numeric("602")
 
+data$remark[(
+  data$speciesname == "CommonKes" 
+| data$speciesname == "LesserKes" 
+| data$speciesname == "Kestrel-SPEC" 
+| data$speciesname == "Hobby" 
+| data$speciesname == "Falcon-SPEC" 
+| data$speciesname == "Merlin") 
+& (data$year >= 2010)]<-paste("previously", data$count[(
+  data$speciesname == "CommonKes" 
+| data$speciesname == "LesserKes" 
+| data$speciesname == "Kestrel-SPEC" 
+| data$speciesname == "Hobby" 
+| data$speciesname == "Falcon-SPEC" 
+| data$speciesname == "Merlin") 
+& (data$year >= 2010)], "- count on impulse but no monitoring this year - ", data$remark[(
+  data$speciesname == "CommonKes" 
+| data$speciesname == "LesserKes" 
+| data$speciesname == "Kestrel-SPEC" 
+| data$speciesname == "Hobby" 
+| data$speciesname == "Falcon-SPEC" 
+| data$speciesname == "Merlin") 
+& (data$year >= 2010)])
 
+data$count[(  
+  data$speciesname == "CommonKes" 
+| data$speciesname == "LesserKes" 
+| data$speciesname == "Kestrel-SPEC" 
+| data$speciesname == "Hobby" 
+| data$speciesname == "Falcon-SPEC" 
+| data$speciesname == "Merlin") ]<-0
 
 # Harriers ########################################
 data$speciesname[
   data$speciesname == "Harspec" 
-| data$speciesname == "Circus-SPEC"]<-"Harrier-SPEC"
+| data$speciesname == "Circus-SPEC"
+| data$speciesname == "harrier sp"]<-"Harrier-SPEC"
 data$speciesid[data$speciesname == "Harrier-SPEC"]<-as.numeric("584")
 
 data$speciesname[data$speciesname == "MAR"]<-"Mar"
@@ -347,13 +397,82 @@ data$speciesid[data$speciesname == "Hen"]<-as.numeric("96")
 data$speciesname[data$speciesname == "MON"]<-"Mon" 
 data$speciesid[data$speciesname == "Mon"]<-as.numeric("98")
 
+data$speciesid[data$speciesname == "Pal"]<-as.numeric("97")
+
+data$age[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon") 
+& data$age == "" 
+& (data$sex == "f" 
+|  data$sex == "m")]<-"nonjuv"
+
+data$sex[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon"
+| data$speciesname == "Hen"
+| data$speciesname == "Mar") 
+& data$age == "juv"]<-""
+
+# adapt protocol rules
+# adapt hard Protocol rules >=2010
+data$remark[
+  data$speciesname == "Pal" 
+& data$sex == "" 
+& data$age == "" 
+& data$year >= 2010]<-paste("previously Pal without age and sex -", data$remark[
+  data$speciesname == "Pal" 
+& data$sex == "" 
+& data$age == "" 
+& data$year >= 2010])
+
+data$speciesname[
+  data$speciesname == "Pal" 
+& data$sex == "" 
+& data$age == "" 
+& data$year >= 2010]<-"MonPalHen"
+
+data$remark[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon" 
+| data$speciesname == "Hen") 
+& data$sex == "" 
+& data$age != "juv" 
+& data$year >= 2010]<-paste("previously",data$speciesname[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon" 
+| data$speciesname == "Hen") 
+& data$sex == "" 
+& data$age != "juv" 
+& data$year >= 2010], "without age and sex -", data$remark[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon" 
+| data$speciesname == "Hen") 
+& data$sex == "" 
+& data$age != "juv" 
+& data$year >= 2010])
+
+data$speciesname[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon" 
+| data$speciesname == "Hen") 
+& data$sex == "" 
+& data$age != "juv" 
+& data$year >= 2010]<-"MonPalHen"
+
+data$speciesname[(
+  data$speciesname == "Pal" 
+| data$speciesname == "Mon") 
+& data$sex == "fc" 
+& data$year >= 2010]<-"MonPalHen"
+
+data$age[
+  data$speciesname == "MonPalHen"  
+& data$age == "ad" 
+& data$year >= 2010]<-"nonjuv"
+
 data$speciesname[data$speciesname == "MonPal"]<-"MonPalHen"
 data$speciesid[data$speciesname == "MonPalHen"]<-as.numeric("1102")
 
-data$speciesid[data$speciesname == "Pal"]<-as.numeric("97")
-# adapt hard Protocol rules >=2014 only
-#data$remark[data$speciesname == "Pal" & data$sex == "" & data$age == ""]<-paste("formerly Pal without age and sex")
-#data$speciesname[data$speciesname == "Pal" & data$sex == "" & data$age == ""]<-"MonPalHen"
 
 
 #Sparrowhawks
@@ -363,8 +482,9 @@ data$speciesname[
 | data$speciesname == "LevantS"]<-"LevantSH"
 data$speciesid[data$speciesname == "LevantSH"]<-as.numeric("1019")
 # LevantSH not monitored in 2010, 11, 12, 13
-data$remark[data$speciesname == "LevantSH" & (data$year == "2010" | data$year == "2011" | data$year == "2012" | data$year == "2013")]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "LevantSH" & (data$year == "2010" | data$year == "2011" | data$year == "2012" | data$year == "2013")])
-data$count[data$speciesname == "LevantSH" & (data$year == "2010" | data$year == "2011" | data$year == "2012" | data$year == "2013")]<-0
+data$remark[data$speciesname == "LevantSH" & (data$year >= 2010 & data$year <= 2013)]<- paste("previously", data$count[data$speciesname == "LevantSH" & (data$year >= 2010 & data$year <= 2013)], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "LevantSH" & (data$year >= 2010 & data$year <= 2013)])
+data$count[data$speciesname == "LevantSH" & (data$year >= 2010 & data$year <= 2013)]<-0
+
 
 data$speciesname[
   data$speciesname == "SH"
@@ -372,28 +492,28 @@ data$speciesname[
 | data$speciesname == "EuropeanSH"]<-"EurasianSH"
 data$speciesid[data$speciesname == "EurasianSH"]<-as.numeric("100")
 # EurasianSH not monitored in since 2010
-data$remark[data$speciesname == "EurasianSH" & (data$year >= 2010)]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "EurasianSH" & (data$year >= "2010")])
-data$count[data$speciesname == "EurasianSH" & (data$year >= "2010")]<-0
-
+data$remark[data$speciesname == "EurasianSH" & (data$year >= 2010)]<- paste("previously", data$count[data$speciesname == "EurasianSH" & (data$year >= 2010)], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "EurasianSH" & (data$year >= 2010)])
+data$count[data$speciesname == "EurasianSH" & (data$year >= 2010)]<-0
 
 data$speciesname[data$speciesname == "SPH" ]<-"SparrowH-SPEC"
 data$speciesid[data$speciesname == "SparrowH-SPEC"]<-as.numeric("1101")
 # SparrowH-SPEC not monitored in since 2010
-data$remark[data$speciesname == "SparrowH-SPEC" & (data$year >= 2010)]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "SparrowH-SPEC" & (data$year >= "2010")])
-data$count[data$speciesname == "SparrowH-SPEC" & (data$year >= "2010")]<-0
+data$remark[data$speciesname == "SparrowH-SPEC" & (data$year >= 2010)]<- paste("previously", data$count[data$speciesname == "SparrowH-SPEC" & (data$year >= 2010)], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "SparrowH-SPEC" & (data$year >= 2010)])
+data$count[data$speciesname == "SparrowH-SPEC" & (data$year >= 2010)]<-0
+
+
 
 data$speciesname[data$speciesname == "GH"]<-"Goshawk"
 data$speciesid[data$speciesname == "Goshawk"]<-as.numeric("99")
 # Goshawk not monitored in since 2010
-data$remark[data$speciesname == "Goshawk" & (data$year >= 2010)]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "Goshawk" & (data$year >= "2010")])
-data$count[data$speciesname == "Goshawk" & (data$year >= "2010")]<-0
+data$remark[data$speciesname == "Goshawk" & (data$year >= 2010)]<- paste("previously", data$count[data$speciesname == "Goshawk" & (data$year >= 2010)], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "Goshawk" & (data$year >= 2010)])
+data$count[data$speciesname == "Goshawk" & (data$year >= 2010)]<-0
 
 data$speciesname[data$speciesname == "SPGH"]<-"SPH/Goshawk"
 data$speciesid[data$speciesname == "SPH/Goshawk"]<-as.numeric("585")
 # SPH/Goshawk not monitored in since 2010
-data$remark[data$speciesname == "SPH/Goshawk" & (data$year >= 2010)]<-paste("not monitored: irregular entry of", data$count[data$speciesname == "SPH/Goshawk" & (data$year >= "2010")])
-data$count[data$speciesname == "SPH/Goshawk" & (data$year >= "2010")]<-0
-
+data$remark[data$speciesname == "SPH/Goshawk" & (data$year >= 2010)]<- paste("previously", data$count[data$speciesname == "SPH/Goshawk" & (data$year >= 2010)], "- count on impulse but no monitoring this year - ", data$remark[data$speciesname == "SPH/Goshawk" & (data$year >= 2010)])
+data$count[data$speciesname == "SPH/Goshawk" & (data$year >= 2010)]<-0
 
 
 # species groups #########################################
@@ -405,6 +525,7 @@ data$speciesid[data$speciesname == "MediumRaptor"]<-as.numeric("1103")
 data$speciesname[
   data$speciesname == "UID"
 | data$speciesname == "Raptor_SPEC"
+| data$speciesname == "raptor_SPEC"
 | data$speciesname == "SUID"]<-"Raptor-SPEC" 
 # 44757 UIDS in 19 records until 2010, 42000 entry looks like SteppeBuz and BK in 2009
 # 14 SUIDS Birds only, hence neglected and add to raptor-spec
@@ -412,20 +533,45 @@ data$speciesid[data$speciesname == "Raptor-SPEC"]<-as.numeric("997")
 
 
 
+ data$speciesname[
+  data$speciesname == "Grey Herons"
+ | data$speciesname == "GreyH"]<-"Grey Heron"
+# data$speciesid[data$speciesname == "Grey Heron"]<-as.numeric("000000")
+
+data$speciesname[data$speciesname == "Black-winged Partincole"]<-"Black-winged Pratincole"
+# data$speciesid[data$speciesname == "Black-winged Pratincole"]<-as.numeric("000000")
+data$speciesname[data$speciesname == "Pratincole sp"]<-"Pratincole-SPEC"
+data$speciesname[
+  data$speciesname == "GWEgret"
+| data$speciesname == "Great Egret"]<-"Great White Egret"
+
+data$speciesname[
+ data$speciesname == "Little Egrets"
+| data$speciesname == "LittEgret"]<-"Little Egret"
+# data$speciesid[data$speciesname == "Little Egret"]<-as.numeric("000000")
+
+
+data$speciesname[data$speciesname == "RuddyShel"]<-"Ruddy Shelduck"
+
+ data$speciesname[
+  data$speciesname == "Heron sp"
+| data$speciesname == "Heron SPEC"]<-"Heron-SPEC"
+
+
+ data$speciesname[data$speciesname == "PurpleH"]<-"Purple Heron"
+# data$speciesid[data$speciesname == "Purple Heron"]<-as.numeric("000000")
+
+# data$speciesid[data$speciesname == "Black-winged Stilt"]<-as.numeric("000000")
+# data$speciesid[data$speciesname == "Calidris sp"]<-as.numeric("000000")
+# data$speciesid[data$speciesname == "Cattle Egret"]<-as.numeric("000000")
+ data$speciesname[data$speciesname == "Commen Snipe"]<-"Common Snipe"
+# data$speciesid[data$speciesname == "Common Snipe"]<-as.numeric("000000")
+# data$speciesid[data$speciesname == "Common Nightjar"]<-as.numeric("000000")
+# data$speciesid[data$speciesname == "Cormorant"]<-as.numeric("000000")
+
+
 ################################################################################
 
-#### adjust age to same abbreviations
-data$age<-tolower(data$age)
-data$sex<-tolower(data$sex)
-data$age<-gsub(" ", "", data$age, fixed = TRUE)
-data$age<-gsub("-", "", data$age, fixed = TRUE)
-data$sex<-gsub(" ", "", data$sex, fixed = TRUE)
-
-data$sex[data$sex == "nonjuv"]<-"" #concerns 3 records of Mar in 2014
-data$sex[data$age == "fc" & data$sex == ""]<-"fc" #concerns 2 records of in 2010
-data$age[data$age == "fc" & data$sex == "fc"]<-"" #concerns 2 records of in 2010
-data$age[data$age == "m"]<-"nonjuv" #concerns 3 record in 2013 were non-juv males
-data$age[data$age == "adult"]<-"ad"
 # 1st
 # adjust speciesnames
 
@@ -492,44 +638,55 @@ data$age[(data$speciesname == "HB_AD" | data$speciesname == "HB_JUV" | data$spec
 ######
 
 data$plumage<-tolower(data$plumage)
+data$plumage[data$plumage =="dark"]<-"d"
+data$plumage[data$plumage =="light"]<-"l"
+data$plumage[data$plumage =="fulvescens"]<-"ful"
+data$plumage[data$plumage =="fox red"]<-""
+data$plumage[data$plumage =="melanistic"]<-"mel"
+data$plumage[data$plumage =="leucistic"]<-"leu"
+
 data$sex[(data$plumage == "fc")] <-"fc"
 data$plumage[(data$plumage == "fc")] <-""
 
 
 #### adjust counttype to same abbreviations
-data$counttype<-as.character(data$counttype)
-data$counttype[data$counttype == "SC"]<-"S"
-data$counttype[data$counttype == "DC"]<-"D"
+data$counttype<-as.character(tolower(data$counttype))
+data$counttype[data$counttype == "s"]<-"sc"
+data$counttype[data$counttype == "d"]<-"dc"
 
 #### adjust migtype to same abbreviations
-data$migtype<-as.character(data$migtype)
+data$migtype<-as.character(tolower(data$migtype))
 data$migtype[data$migtype == "injured" | data$migtype == "inj"]<-"i"
 data$migtype[data$migtype == "killed" | data$migtype == "kil"]<-"k"
 
 #### adjust stations
 data$telpost<-as.numeric(data$telpost)
-data$telpost[data$telpost == 1]<-"1047"
-data$telpost[data$telpost == 2]<-"1048"
+data$telpost[data$telpost == 1047 | data$telpost == "1. Sakhalvasho"]<-"1"
+data$telpost[data$telpost == 1048 | data$telpost == "2. Shuamta"]<-"2"
+
+#### extract protocol species only
+data_protocol<-subset(data, (
+data$speciesid < 0 
+| (data$speciesid >=86 & data$speciesid <= 129)
+| (data$speciesid == 31 | data$speciesid == 32 | data$speciesid == 232 | data$speciesid == 233 | data$speciesid == 235 | data$speciesid == 246)
+| (data$speciesid >=506 & data$speciesid <= 624)
+| data$speciesid >=997
+& data$speciesid != 982))
 
 ### final test
-unique(data$speciesname)
-unique(data$telpost)
-unique(data$sex)
-unique(data$age)
-unique(data$plumage)
-unique(data$migtype)
-unique(data$counttype)
-
-#unique(data$speciesname[(data$sex == "fc")] )
-
+specnames<-data.frame(a=unique(data_protocol$speciesname), b=unique(data_protocol$speciesid))
+specnames[order(specnames$b),]
+unique(data_protocol$telpost)
+unique(data_protocol$sex)
+unique(data_protocol$age)
+unique(data_protocol$plumage)
+unique(data_protocol$migtype)
+unique(data_protocol$counttype)
 
 names(data)
-# was passiert mit den anderen Arten? am besten beim Processing rausfallen lassen
-# write file for each year seperately, 2008-2014
 
-sum(data$count[data$speciesname == "CrestedHB" & data$telpost == "1047" & data$year == "2015"])
-
+a<-subset(data_protocol, data$year =="2016")
 #### write data####
 #setwd(outputdir)
-#write.csv(a, "1-converter_BRC-to-Trek_results.csv", fileEncoding="UTF-8", row.names=FALSE)
-#a<-subset(data, data$year == "2008")
+write.csv(data, "1-full_data_PROCESSED_prefinal.csv", fileEncoding="UTF-8", row.names=FALSE)
+
