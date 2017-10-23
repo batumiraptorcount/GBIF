@@ -569,7 +569,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-08-19,11:09:00,,2,SB,,1,,,E3,,,,,,
 2013-08-19,15:34:00,,2,SB,,1,,,W3,,,,,,
 2013-08-19,07:58:00,,1,TurtleD,,8,,,O,,,,,,
-2013-08-19,08:17:00,,1,TurtleD,,11,,,No Value,,,,,,
+2013-08-19,08:17:00,,1,TurtleD,,11,,,,,,,,,
 2013-08-19,08:22:00,,1,TurtleD,,9,,,O,,,,,,
 2013-08-19,08:48:00,,1,TurtleD,,19,,,W1,,,,,,
 2013-08-19,09:31:00,,1,TurtleD,,11,,,E3,,,,,,
@@ -2935,7 +2935,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-08-23,10:39:00,,2,Mar,,1,,,W1,,FC,,,,
 2013-08-23,10:52:00,,2,Mar,,1,,,W2,,FC,,,,
 2013-08-23,10:52:00,,2,Mar,,1,,,E1,,,,,,
-2013-08-23,11:48:00,,2,Mar,,0,,,O,,,,,,
+2013-08-23,11:48:00,,2,Mar,,1,,,O,,,,,,
 2013-08-23,11:52:00,,2,Mar,,1,,,O,Non-juv,F,,,,
 2013-08-23,11:53:00,,2,Mar,,1,,,O,Juv,,,,,
 2013-08-23,12:00:00,,2,Mar,,1,,,W1,Non-juv,F,,,,
@@ -2974,7 +2974,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-08-23,17:44:00,,1,Mar,,1,,,W1,Juv,,,,,
 2013-08-23,07:50:00,,2,Mon,,10,,,W2,Non-juv,M,,,,
 2013-08-23,07:50:00,,2,Mon,,1,,,W2,Non-juv,F,,,,
-2013-08-23,07:51:00,,2,Mon,,0,,,W2,Ad,M,,,,
+2013-08-23,07:51:00,,2,Mon,,1,,,W2,Ad,M,,,,
 2013-08-23,08:03:00,,2,Mon,,1,,,O,Non-juv,F,,,,
 2013-08-23,08:03:00,,2,Mon,,1,,,O,Imm,M,,,,
 2013-08-23,08:05:00,,2,Mon,,1,,,O,Imm,M,,,,
@@ -3765,7 +3765,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-08-25,14:51:00,,2,MonPalHen,,1,,,W3,,FC,,,,
 2013-08-25,17:17:00,,2,MonPalHen,,1,,,W3,,FC,,,,
 2013-08-25,17:34:00,,2,MonPalHen,,1,,,E2,,FC,,,,
-2013-08-25,12:52:00,,2,UID,,0,,,E1,,,,,kil,an unidentified raptor shot
+2013-08-25,12:52:00,,2,UID,,1,,,E1,,,,,kil,an unidentified raptor shot
 2013-08-25,11:46:00,,1,Osprey,,1,,,W2,Ad,,,,,
 2013-08-25,13:45:00,,1,Osprey,,1,,,E3,,,,,,
 2013-08-25,14:19:00,,1,Osprey,,1,,,E3,,,,,,
@@ -4903,7 +4903,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-08-27,11:37:00,,2,HB,,55,,,E3,,,,,,
 2013-08-27,11:42:00,,2,HB,,2,,,W1,,,,,,
 2013-08-27,11:45:00,,2,HB,,6,,,E3,,,,,,
-2013-08-27,12:01:00,,2,HB,,0,,,W1,,,,,kil,
+2013-08-27,12:01:00,,2,HB,,1,,,W1,,,,,kil,
 2013-08-27,13:03:00,,2,HB,,1,,,E2,,,,,,
 2013-08-27,13:16:00,,2,HB,,1,,,W1,,,,,,
 2013-08-27,14:00:00,,2,HB,,12,,,E3,,,,,,
@@ -9714,7 +9714,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-02,08:03:00,,1,HB,,1,,,W2,,,,,,
 2013-09-02,08:05:00,,1,HB,,49,,,E3,,,,,,
 2013-09-02,08:09:00,,1,HB,,6,,,E3,,,,,,
-2013-09-02,08:11:00,,1,HB,,0,,,E1,,,,,kil,shot on 1 HB
+2013-09-02,08:11:00,,1,HB,,1,,,E1,,,,,kil,shot on 1 HB
 2013-09-02,08:12:00,,1,HB,,1,,,E3,,,,,,
 2013-09-02,08:14:00,,1,HB,,1,,,W2,,,,,,
 2013-09-02,08:15:00,,1,HB,,53,,,E3,,,,,,
@@ -10456,7 +10456,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-02,15:26:00,,1,MonPalHen,,1,,,E3,,FC,,,,
 2013-09-02,15:41:00,,1,MonPalHen,,1,,,E2,Juv,,,,,
 2013-09-02,15:53:00,,1,MonPalHen,,1,,,E2,,FC,,,,
-2013-09-02,15:57:00,,1,MonPalHen,,0,,,O,,FC,,,,
+2013-09-02,15:57:00,,1,MonPalHen,,1,,,O,,FC,,,,
 2013-09-02,16:22:00,,1,MonPalHen,,1,,,E2,,FC,,,,
 2013-09-02,16:30:00,,1,MonPalHen,,1,,,E1,,FC,,,,
 2013-09-02,16:32:00,,1,MonPalHen,,1,,,W2,,,,,,
@@ -10543,7 +10543,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-02,18:20:00,,1,Purple Heron,,104,,,W3,,,,,,
 2013-09-02,18:23:00,,1,Purple Heron,,1,,,W3,,,,,,
 2013-09-02,18:27:00,,1,Purple Heron,,6,,,W3,,,,,,
-2013-09-02,18:31:00,,1,Ortolan,,793,,,No Value,,,,,,full day count
+2013-09-02,18:31:00,,1,Ortolan,,793,,,,,,,,,full day count
 2013-09-02,18:36:00,,1,Purple Heron,,15,,,W3,,,,,,
 2013-09-02,18:41:00,,1,Purple Heron,,18,,,W3,,,,,,
 2013-09-02,10:40:00,,1,Greenshank/Marsh Sandpiper,,1,,,W2,,,,,kil,
@@ -11289,7 +11289,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-03,17:04:00,,1,HB,,7,,,W2,,,,,,
 2013-09-03,17:08:00,,1,HB,,45,,,E2,,,,,,
 2013-09-03,08:13:00,,2,HB,,1,,,E3,,,,,,
-2013-09-03,08:45:00,,2,HB,,0,,,E3,,,,,kil,
+2013-09-03,08:45:00,,2,HB,,1,,,E3,,,,,kil,
 2013-09-03,15:40:00,,2,HB,,246,,,E2,,,,,,
 2013-09-03,15:41:00,,2,HB,,8,,,E2,,,,,,
 2013-09-03,16:10:00,,2,HB,,18,,,W3,,,,,,
@@ -13084,7 +13084,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-04,17:51:00,,2,MUID,,1,,,E2,,,,,,
 2013-09-04,07:08:00,,1,Purple Heron,,8,,,W3,,,,,,
 2013-09-04,10:13:00,,1,Grey Heron,,1,,,W3,,,,,,
-2013-09-04,10:22:00,,2,LevantSH,,0,,,E1,,,,,kil,
+2013-09-04,10:22:00,,2,LevantSH,,1,,,E1,,,,,kil,
 2013-09-04,12:03:00,,1,Osprey,,1,,,W2,,,,,,
 2013-09-04,07:32:00,,1,Pal,,1,,,E1,Non-juv,M,,,,
 2013-09-04,08:12:00,,1,Pal,,1,,,O,Juv,,,,,
@@ -13374,7 +13374,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-06,10:01:00,,1,HB,,2,,,E2,,,,,,
 2013-09-06,10:04:00,,1,HB,,12,,,W2,,,,,,
 2013-09-06,10:08:00,,1,HB,,2,,,W2,,,,,,
-2013-09-06,10:12:00,,1,HB,,0,,,W2,,,,,kil,
+2013-09-06,10:12:00,,1,HB,,1,,,W2,,,,,kil,
 2013-09-06,10:13:00,,1,HB,,52,,,E2,,,,,,
 2013-09-06,10:13:00,,1,HB,,2,,,W2,,,,,,
 2013-09-06,10:14:00,,1,HB,,22,,,W2,,,,,,
@@ -13488,7 +13488,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-06,16:37:00,,1,HB,,39,,,E3,,,,,,
 2013-09-06,16:38:00,,1,HB,,72,,,E2,,,,,,
 2013-09-06,16:41:00,,1,HB,,1,,,O,,,,,,
-2013-09-06,16:41:00,,1,HB,,0,,,O,,,,,inj,
+2013-09-06,16:41:00,,1,HB,,1,,,O,,,,,inj,
 2013-09-06,16:43:00,,1,HB,,5,,,E3,,,,,,
 2013-09-06,16:48:00,,1,HB,,1,,,E2,,,,,,
 2013-09-06,16:48:00,,1,HB,,3,,,E1,,,,,,
@@ -13524,7 +13524,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-06,11:26:00,,2,HB,,25,,,E3,,,,,,
 2013-09-06,11:49:00,,2,HB,,1,,,E3,,,,,,
 2013-09-06,12:08:00,,2,HB,,1,,,W1,,,,,kil,
-2013-09-06,13:04:00,,2,HB,,0,,,E1,,,,,kil,1 individual
+2013-09-06,13:04:00,,2,HB,,1,,,E1,,,,,kil,1 individual
 2013-09-06,16:06:00,,2,HB,,2,,,O,,,,,,
 2013-09-06,17:19:00,,2,HB,,1,,,E3,,,,,,
 2013-09-06,16:10:00,,1,HB_Ad,,1,,,O,,,,,,
@@ -14086,9 +14086,9 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-07,15:29:00,,2,EgyptianV,,1,,,E1,Juv,,,,,
 2013-09-07,09:26:00,,2,HB,,12,,,E3,,,,,,
 2013-09-07,09:26:00,,2,HB,,9,,,E3,,,,,,
-2013-09-07,11:03:00,,2,HB,,0,,,O,,,,,kil,1
+2013-09-07,11:03:00,,2,HB,,1,,,O,,,,,kil,1
 2013-09-07,11:42:00,,2,HB,,21,,,E3,,,,,,
-2013-09-07,11:55:00,,2,HB,,0,,,W2,,,,,kil,1 adult
+2013-09-07,11:55:00,,2,HB,,1,,,W2,,,,,kil,1 adult
 2013-09-07,15:38:00,,2,HB,,1,,,W1,,,,,inj,no tail
 2013-09-07,08:25:00,,1,HB,,33,,,E3,,,,,,
 2013-09-07,08:35:00,,1,HB,,30,,,E3,,,,,,
@@ -15529,7 +15529,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-08,17:45:00,,2,MonPalHen,,1,,,W1,,FC,,,,
 2013-09-08,17:45:00,,2,MonPalHen,,1,,,W1,Juv,,,,,
 2013-09-08,12:57:00,,1,MUID,,82,,,E2,,,,,,
-2013-09-08,13:15:00,,1,Hobby,,1,,,No Value,,,,,kil,
+2013-09-08,13:15:00,,1,Hobby,,1,,,,,,,,kil,
 2013-09-08,18:55:00,,1,Osprey,,1,,,O,,,,,,
 2013-09-08,14:51:00,,2,Osprey,,1,,,E1,,,,,,
 2013-09-08,17:03:00,,1,Pal,,1,,,O,Juv,,,,,
@@ -16712,7 +16712,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-10,08:14:00,,2,HB,,1,,,E3,,,,,,
 2013-09-10,08:59:00,,2,HB,,1,,,E2,,,,,,
 2013-09-10,09:11:00,,2,HB,,1,,,E2,,,,,,
-2013-09-10,10:47:00,,2,HB,,0,,,E3,,,,,kil,1
+2013-09-10,10:47:00,,2,HB,,1,,,E3,,,,,kil,1
 2013-09-10,13:06:00,,2,HB,,2,,,E3,,,,,,
 2013-09-10,13:44:00,,2,HB,,4,,,E3,,,,,,
 2013-09-10,13:51:00,,2,HB,,2,,,E3,,,,,,
@@ -16725,9 +16725,9 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-10,15:01:00,,2,HB,,7,,,E3,,,,,,
 2013-09-10,15:15:00,,2,HB,,137,,,E3,,,,,,
 2013-09-10,15:20:00,,2,HB,,1,,,E2,,,,,,
-2013-09-10,15:21:00,,2,HB,,0,,,No Value,,,,,kil,1
+2013-09-10,15:21:00,,2,HB,,1,,,,,,,,kil,1
 2013-09-10,15:24:00,,2,HB,,127,,,E2,,,,,,
-2013-09-10,15:43:00,,2,HB,,0,,,E1,,,,,kil,1
+2013-09-10,15:43:00,,2,HB,,1,,,E1,,,,,kil,1
 2013-09-10,16:32:00,,2,HB,,508,,,E3,,,,,,
 2013-09-10,16:40:00,,2,HB,,118,,,E3,,,,,,
 2013-09-10,16:49:00,,2,HB,,240,,,E3,,,,,,
@@ -17726,7 +17726,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-10,16:40:00,,1,Osprey,,1,,,E3,,,,,,
 2013-09-10,14:05:00,,2,Osprey,,1,,,W1,,,,,,
 2013-09-10,16:33:00,,2,Osprey,,1,,,O,,,,,,
-2013-09-10,07:28:00,,1,Pal,,0,1,,No Value,,,,,,
+2013-09-10,07:28:00,,1,Pal,,0,1,,,,,,,,
 2013-09-10,07:44:00,,1,Pal,,1,,,E2,Juv,,,,,
 2013-09-10,08:00:00,,1,Pal,,1,,,W1,Juv,,,,,
 2013-09-10,08:12:00,,1,Pal,,2,,,E1,Juv,,,,,
@@ -20388,7 +20388,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-12,08:58:00,,1,HB,,1,,,W1,,,,,,
 2013-09-12,09:09:00,,1,HB,,2,,,E1,,,,,,
 2013-09-12,09:10:00,,1,HB,,9,,,W2,,,,,,
-2013-09-12,09:11:00,,1,HB,,0,,,E1,,,,,kil,
+2013-09-12,09:11:00,,1,HB,,1,,,E1,,,,,kil,
 2013-09-12,09:17:00,,1,HB,,5,,,E1,,,,,,
 2013-09-12,09:24:00,,1,HB,,2,,,E2,,,,,,
 2013-09-12,09:31:00,,1,HB,,9,,,E2,,,,,,
@@ -21675,7 +21675,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-13,15:07:00,,2,BEL,,1,,,W1,Juv,,Light,,,
 2013-09-13,15:07:00,,2,BEL,,1,,,W1,,,Light,,,
 2013-09-13,15:10:00,,2,BEL,,1,,,E3,,,Light,,,
-2013-09-13,15:15:00,,2,BEL,,0,,,E3,,,Light,,,
+2013-09-13,15:15:00,,2,BEL,,1,,,E3,,,Light,,,
 2013-09-13,15:16:00,,2,BEL,,1,,,O,Juv,,Light,,,
 2013-09-13,15:06:00,,2,BEL,,1,,,O,Juv,,Light,,,
 2013-09-13,15:07:00,,2,BEL,,1,,,E2,,,Light,,,
@@ -22172,7 +22172,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-13,09:14:00,,1,HB,,3,,,W3,,,,,,
 2013-09-13,09:20:00,,1,HB,,24,,,E1,,,,,,
 2013-09-13,09:22:00,,1,HB,,3,,,W2,,,,,,
-2013-09-13,09:24:00,,1,HB,,0,,,E2,,,,,kil,1 bird shot. Lots of unrecorded shot birds.
+2013-09-13,09:24:00,,1,HB,,1,,,E2,,,,,kil,1 bird shot. Lots of unrecorded shot birds.
 2013-09-13,09:25:00,,1,HB,,2,,,E1,,,,,,
 2013-09-13,09:36:00,,1,HB,,1,,,E1,,,,,,
 2013-09-13,09:36:00,,1,HB,,1,,,E1,,,,,,
@@ -22247,7 +22247,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-13,12:18:00,,1,HB,,5,,,W2,,,,,,
 2013-09-13,12:19:00,,1,HB,,49,,,E1,,,,,,
 2013-09-13,12:23:00,,1,HB,,14,,,W3,,,,,,
-2013-09-13,12:28:00,,1,HB,,0,,,E1,,,,,kil,
+2013-09-13,12:28:00,,1,HB,,1,,,E1,,,,,kil,
 2013-09-13,12:30:00,,1,HB,,3,,,W3,,,,,,
 2013-09-13,12:31:00,,1,HB,,7,,,W1,,,,,,
 2013-09-13,12:36:00,,1,HB,,1,,,W3,,,,,,
@@ -22777,7 +22777,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-13,09:54:00,,1,Mar,,1,,,E1,Ad,M,,,,
 2013-09-13,09:57:00,,1,Mar,,1,,,W2,Ad,M,,,,
 2013-09-13,09:59:00,,1,Mar,,1,,,E1,Juv,,,,,
-2013-09-13,10:04:00,,1,Mar,,0,,,E1,Non-juv,F,,,kil,
+2013-09-13,10:04:00,,1,Mar,,1,,,E1,Non-juv,F,,,kil,
 2013-09-13,10:04:00,,1,Mar,,2,,,E2,,FC,,,,
 2013-09-13,10:13:00,,1,Mar,,1,,,E1,Ad,M,,,,
 2013-09-13,10:14:00,,1,Mar,,1,,,E2,Ad,M,,,,
@@ -24668,7 +24668,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-15,13:59:00,,1,BEL,,1,,,W3,Ad,,Light,,,
 2013-09-15,14:14:00,,1,BEL,,6,,,W3,Ad,,Light,,,
 2013-09-15,14:14:00,,1,BEL,,1,,,W3,Juv,,Light,,,
-2013-09-15,15:40:00,,1,BEL,,0,1,,No Value,,,Light,,,
+2013-09-15,15:40:00,,1,BEL,,0,1,,,,,Light,,,
 2013-09-15,09:14:00,,2,BEL,,1,,,E2,Ad,,Light,,,
 2013-09-15,09:46:00,,2,BEL,,1,,,E2,,,Light,,,
 2013-09-15,09:48:00,,2,BEL,,1,,,W1,Ad,,Light,,,
@@ -24857,7 +24857,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-15,13:38:00,,1,HB,,7,,,O,,,,,,
 2013-09-15,13:39:00,,1,HB,,161,,,W1,,,,,,
 2013-09-15,13:40:00,,1,HB,,2,,,E2,,,,,,
-2013-09-15,13:40:00,,1,HB,,2,,,No Value,,,,,kil,2 killed
+2013-09-15,13:40:00,,1,HB,,2,,,,,,,,kil,2 killed
 2013-09-15,13:42:00,,1,HB,,12,,,E1,,,,,,
 2013-09-15,13:43:00,,1,HB,,14,,,O,,,,,,
 2013-09-15,13:44:00,,1,HB,,6,,,E2,,,,,,
@@ -24867,7 +24867,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-15,13:46:00,,1,HB,,2,,,E1,,,,,kil,2 killed
 2013-09-15,13:47:00,,1,HB,,1,,,E1,,,,,,
 2013-09-15,13:48:00,,1,HB,,2,,,E1,,,,,,
-2013-09-15,13:49:00,,1,HB,,1,,,No Value,,,,,kil,1 killed
+2013-09-15,13:49:00,,1,HB,,1,,,,,,,,kil,1 killed
 2013-09-15,13:51:00,,1,HB,,295,,,W2,,,,,,
 2013-09-15,13:55:00,,1,HB,,156,,,W3,,,,,,
 2013-09-15,13:55:00,,1,HB,,8,,,O,,,,,,
@@ -24892,7 +24892,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-15,14:15:00,,1,HB,,2,,,W2,,,,,,
 2013-09-15,14:16:00,,1,HB,,2,,,W1,,,,,,
 2013-09-15,14:16:00,,1,HB,,2,,,O,,,,,,
-2013-09-15,14:15:00,,1,HB,,0,21,,No Value,,,,,,
+2013-09-15,14:15:00,,1,HB,,0,21,,,,,,,,
 2013-09-15,14:20:00,,1,HB,,1,,,O,,,,,,
 2013-09-15,15:14:00,,1,HB,,2,,,E1,,,,,,
 2013-09-15,15:17:00,,1,HB,,67,,,E2,,,,,,
@@ -25789,7 +25789,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-16,09:39:00,,2,BK_Juv,,1,,,O,,,,,,
 2013-09-16,15:10:00,,2,BK_Juv,,1,,,O,,,,,,
 2013-09-16,16:05:00,,2,BK_Juv,,2,,,O,,,,,,
-2013-09-16,07:23:00,,1,BlaStork,,0,,,E2,,,,,,flying north
+2013-09-16,07:23:00,,1,BlaStork,,1,,,E2,,,,,,flying north
 2013-09-16,11:05:00,,1,BlaStork,,1,,,E2,,,,,,
 2013-09-16,11:21:00,,1,BlaStork,,2,,,E1,Ad,,,,,
 2013-09-16,11:21:00,,1,BlaStork,,1,,,E1,Juv,,,,,
@@ -27770,7 +27770,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-17,11:01:00,,2,HB,,1,,,E1,,,,,,
 2013-09-17,11:04:00,,2,HB,,2,,,W2,,,,,,
 2013-09-17,11:05:00,,2,HB,,2,,,E1,,,,,,
-2013-09-17,11:18:00,,2,HB,,1,,,No Value,,,,,kil,1 HB
+2013-09-17,11:18:00,,2,HB,,1,,,,,,,,kil,1 HB
 2013-09-17,11:19:00,,2,HB,,2,,,E1,,,,,,
 2013-09-17,11:22:00,,2,HB,,1,,,W1,,,,,,
 2013-09-17,11:23:00,,2,HB,,1,,,W1,,,,,kil,1 individual
@@ -28322,7 +28322,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-17,11:11:00,,2,SB,,1,,,E1,Juv,,,,,
 2013-09-17,11:12:00,,2,SB,,2,,,E3,,,,,,
 2013-09-17,11:19:00,,2,SB,,5,,,E1,,,,,,
-2013-09-17,11:21:00,,2,SB,,1,,,No Value,,,,,kil,1 SB juv
+2013-09-17,11:21:00,,2,SB,,1,,,,,,,,kil,1 SB juv
 2013-09-17,11:22:00,,2,SB,,3,,,W1,Ad,,,,,
 2013-09-17,11:22:00,,2,SB,,2,,,W1,,,,,,
 2013-09-17,11:31:00,,2,SB,,1,,,E3,,,,,,
@@ -32040,7 +32040,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-21,14:56:00,,1,Mar,,3,,,E2,Juv,,,,,
 2013-09-21,14:56:00,,1,Mar,,3,,,E2,Ad,F,,,,
 2013-09-21,14:56:00,,1,Mar,,1,,,E2,Imm,M,,,,
-2013-09-21,14:57:00,,1,Mar,,0,,,E2,,,,,inj,1 hurt
+2013-09-21,14:57:00,,1,Mar,,1,,,E2,,,,,inj,1 hurt
 2013-09-21,15:30:00,,1,Mar,,1,,,W3,,FC,,,,
 2013-09-21,15:54:00,,1,Mar,,1,,,W3,Juv,,,,,
 2013-09-21,15:56:00,,1,Mar,,1,,,E2,Ad,M,,,,
@@ -33094,7 +33094,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-23,11:06:00,,2,MUID,,18,,,E3,,,,,,
 2013-09-23,11:10:00,,2,MUID,,7,,,O,,,,,,
 2013-09-23,08:36:00,,1,Common Snipe,,1,,,W2,,,,,,
-2013-09-23,08:44:00,,1,Ruff,,0,4,,No Value,,,,,,
+2013-09-23,08:44:00,,1,Ruff,,0,4,,,,,,,,
 2013-09-23,11:15:00,,1,Grey Heron,,2,,,W3,,,,,,
 2013-09-23,11:45:00,,1,Ruddy Shelduck,,3,,,W3,,,,,,
 2013-09-23,12:56:00,,1,Great Snipe,,1,,,W2,,,,,,
@@ -33173,7 +33173,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-23,11:23:00,,1,Peregrine,,1,,,W3,Juv,,,,,
 2013-09-23,12:52:00,,1,Peregrine,,1,,,E3,,,,,,
 2013-09-23,12:22:00,,2,Peregrine,,1,,,W1,Ad,,,,,
-2013-09-23,17:20:00,,1,RedFF,,450,,,No Value,,,,,,"very important falcons migration today, especially for Red-footed ; birds counted only for 90 minutes (450 ind.) during a period for which the RFF passage was not the strongest. RFF have been streaming almost all the day long in W2-W3. At least 1000 birds."
+2013-09-23,17:20:00,,1,RedFF,,450,,,,,,,,,"very important falcons migration today, especially for Red-footed ; birds counted only for 90 minutes (450 ind.) during a period for which the RFF passage was not the strongest. RFF have been streaming almost all the day long in W2-W3. At least 1000 birds."
 2013-09-23,14:00:00,,1,Roller,,0,1,,W2,,,,,,1 going north
 2013-09-23,08:02:00,,1,SB,,0,4,,W2,,,,,,4 going north
 2013-09-23,09:33:00,,1,SB,,0,1,,E1,Juv,,,,,1 going north
@@ -33367,7 +33367,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-23,17:12:00,,2,SB,,1,,,E1,,,,,,
 2013-09-23,12:16:00,,1,ShortTE,,1,,,E2,Ad,,,,,
 2013-09-23,13:05:00,,2,ShortTE,,1,,,W3,,,,,,
-2013-09-23,08:44:00,,1,StockD,,0,4,,No Value,,,,,,4 going north east
+2013-09-23,08:44:00,,1,StockD,,0,4,,,,,,,,4 going north east
 2013-09-23,10:38:00,,1,StockD,,7,,,O,,,,,,
 2013-09-23,10:37:00,,2,StockD,,7,,,W3,,,,,,
 2013-09-23,14:08:00,,2,StockD,,6,,,O,,,,,,
@@ -39756,7 +39756,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-09-28,11:06:00,,1,TurtleD,,4,,,W2,,,,,,
 2013-09-28,15:51:00,,1,WhiStork,,1,,,E3,,,,,,
 2013-09-28,15:50:00,,2,WhiStork,,1,,,W2,,,,,,
-2013-09-29,10:49:00,,1,BE,,0,,,O,,,,,kil,one shot
+2013-09-29,10:49:00,,1,BE,,1,,,O,,,,,kil,one shot
 2013-09-29,12:39:00,,1,BE,,1,,,E2,Ad,,,,,
 2013-09-29,13:21:00,,1,BE,,1,,,E1,Juv,,,,,
 2013-09-29,15:33:00,,2,BE,,1,,,W3,,,,,,
@@ -41785,7 +41785,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-10-01,11:28:00,,1,Mar,,1,,,E2,Juv,,,,,
 2013-10-01,11:32:00,,1,Mar,,1,,,E2,Non-juv,F,,,,
 2013-10-01,11:40:00,,1,Mar,,1,,,E2,Juv,,,,,
-2013-10-01,12:00:00,,1,Mar,,0,,,E2,Juv,,,,,
+2013-10-01,12:00:00,,1,Mar,,1,,,E2,Juv,,,,,
 2013-10-01,12:06:00,,1,Mar,,1,,,E2,Juv,,,,,
 2013-10-01,12:33:00,,1,Mar,,1,,,E1,Juv,,,,,
 2013-10-01,12:46:00,,1,Mar,,1,,,E1,Ad,M,,,,
@@ -45794,7 +45794,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-10-07,13:03:00,,1,BK,,10,,,W2,,,,,,
 2013-10-07,13:05:00,,1,BK,,1,,,E1,,,,,,
 2013-10-07,13:20:00,,1,BK,,32,,,E1,,,,,,
-2013-10-07,13:41:00,,1,BK,,0,,,W1,,,,,kil,killed
+2013-10-07,13:41:00,,1,BK,,1,,,W1,,,,,kil,killed
 2013-10-07,13:46:00,,1,BK,,86,,,E2,,,,,,
 2013-10-07,13:50:00,,1,BK,,215,,,W2,,,,,,
 2013-10-07,13:50:00,,1,BK,,69,,,W3,,,,,,
@@ -51257,8 +51257,8 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-10-13,16:35:00,,2,Mar,,2,,,E1,Juv,,,,,
 2013-10-13,08:20:00,,1,MonPalHen,,1,,,E2,,,,,,
 2013-10-13,11:23:00,,2,MonPalHen,,1,,,E3,,,,,,
-2013-10-13,16:49:00,,2,EurasianSH,,40,,,No Value,,,,,,full day count
-2013-10-13,16:49:00,,2,RedFF,,17,,,No Value,,,,,,Red-footed Falcons counted today
+2013-10-13,16:49:00,,2,EurasianSH,,40,,,,,,,,,full day count
+2013-10-13,16:49:00,,2,RedFF,,17,,,,,,,,,Red-footed Falcons counted today
 2013-10-13,11:01:00,,1,Roller,,1,,,E1,,,,,,
 2013-10-13,08:38:00,,1,SB,,0,1,,W2,,,,,,1 going north
 2013-10-13,09:07:00,,1,SB,,0,1,,W2,,,,,,1 going north
@@ -52387,7 +52387,7 @@ date,timestamp,countid,telpost,speciesname,speciesid,count,countback,local,locat
 2013-10-15,12:15:00,,2,SB_Ad,,1,,,O,,,,,,
 2013-10-15,12:27:00,,2,SB_Ad,,5,,,O,,,,,,
 2013-10-15,13:05:00,,2,SB_Ad,,3,,,O,,,,,,
-2013-10-15,13:10:00,,2,SB_Ad,,0,,,O,,,,,,
+2013-10-15,13:10:00,,2,SB_Ad,,1,,,O,,,,,,
 2013-10-15,13:15:00,,2,SB_Ad,,1,,,W1,,,,,,
 2013-10-15,13:16:00,,2,SB_Ad,,1,,,W1,,,,,,
 2013-10-15,13:20:00,,2,SB_Ad,,10,,,O,,,,,,

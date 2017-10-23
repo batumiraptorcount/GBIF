@@ -32,22 +32,24 @@ setwd(workdir)
 ### load data #####
 dc_specs<-read.csv("dc_specs.csv", header=TRUE, encoding="UTF-8")
 dc_specs_nonsoaring<-read.csv("dc_specs_nonsoaring.csv", header=TRUE, encoding="UTF-8")
-#data<-read.csv("1-converter_output_2015.csv", header=TRUE, encoding="UTF-8")
+data<-read.csv("1-converter_output_2017.csv", header=TRUE, encoding="UTF-8")
 
 # Detect HB phase1 in order to not run the double count check as HB phase 1 counts only from station 1. 
 HBPhase1Start<-c("2010-08-21 00:00:01 CEST", "2011-08-21 00:00:01 CEST", "2012-08-21 00:00:01 CEST", "2013-08-21 00:00:01 CEST", "2014-08-21 00:00:01 CEST", "2015-08-21 00:00:01 CEST", "2016-08-21 00:00:01 CEST", "2017-08-21 00:00:01 CEST", "2018-08-21 00:00:01 CEST", "2019-08-21 00:00:01 CEST", "2020-08-21 00:00:01 CEST")
 HBPhase1End <-c("2010-09-10 00:00:01 CEST", "2011-09-10 00:00:01 CEST", "2012-09-10 00:00:01 CEST", "2013-09-10 00:00:01 CEST", "2014-09-10 00:00:01 CEST", "2015-09-10 00:00:01 CEST", "2016-09-10 00:00:01 CEST", "2017-09-10 00:00:01 CEST", "2018-09-10 00:00:01 CEST", "2019-09-10 00:00:01 CEST", "2020-09-10 00:00:01 CEST")
 
 #### for running several years uncomment these lines and the line 207 and very last line 349
-for (y in 2008:2016){
-setwd(workdir)	
+#for (y in 2008:2016){
+#setwd(workdir)	
 # modify the file name, make sure the csv is encoded in UTF-8!!
-data<-read.csv(paste0("1-converter_output_",y,".csv"), header=TRUE, encoding="UTF-8")
+#data<-read.csv(paste0("1-converter_output_",y,".csv"), header=TRUE, encoding="UTF-8")
+####
 
 # pre-format data
 data$dcdel<-0
 data$dckept <-0
 data$dcdelremark<-""
+data$speciesname<- gsub("-", ".", data$speciesname)
 data$speciesname<-as.character(data$speciesname)
 data$count<-as.numeric(data$count)
 data$count[which(is.na(data$count) == T)]<-1
@@ -338,6 +340,10 @@ new_count<-as.data.table(new_count)
 if(nrow(new_count[new_count$number_o < new_count$dckept - new_count$dcdel,]) > 0){print(paste(this_year," - ERROR ALERT: NUMBER_O > DCKEPT - DCDEL"))} else if(sum(new_count$dckept + new_count$dcdel) > 0){print(paste(this_year," - ERROR ALERT: dckept + dcdel > 0"))} else {print(quality)}
 ############################################
 
+new_count$species<-gsub(".SPEC", "-SPEC", new_count$species)
+dcdel_tab$species<-gsub(".SPEC", "-SPEC", dcdel_tab$species)
+
+
 setwd(outputdir)
 write.csv(new_count, paste0("1-new_count_DC_",unique(year(new_count$date)),".csv"), fileEncoding ="UTF-8")
 write.csv(dcdel_tab, paste0("1-dcdel_tab_", unique(year(new_count$date)),".csv"), fileEncoding ="UTF-8")
@@ -349,4 +355,4 @@ close(pb)
 library(beepr)
 beep("complete")
 
-}
+#}
