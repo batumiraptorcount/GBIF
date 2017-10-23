@@ -1,2 +1,0 @@
-"","x"
-"1","2011 - detected numbers / records: 10503 / 10055 ### DC Quality: 2011: 59.7 % AND NO ERRORS"
